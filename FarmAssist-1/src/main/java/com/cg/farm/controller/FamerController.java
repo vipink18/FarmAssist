@@ -43,6 +43,11 @@ public class FamerController {
 		return new ResponseEntity<>(frm, HttpStatus.OK);
 	}
 	
+	@PutMapping("/farmer/update/{farmerId}")
+	ResponseEntity<Farmer> update(@PathVariable("farmerId") int farmerId, @RequestBody Farmer farmer) throws FarmerNotFoundException {
+		Farmer updatedfarmer= farmerService.updateFarmer(farmerId, farmer); 
+		return new ResponseEntity<>(updatedfarmer, HttpStatus.OK); // 200 Ok
+	}
 	
 	
 
