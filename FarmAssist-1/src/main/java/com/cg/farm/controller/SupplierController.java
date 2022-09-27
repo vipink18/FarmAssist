@@ -46,7 +46,7 @@ public class SupplierController {
 	@PutMapping("/supplier/update/{supplierId}")
 	ResponseEntity<Supplier> update(@PathVariable("supplierId") int supplierId, @RequestBody Supplier supplier) throws SupplierNotFoundException {
 		Supplier updatedsupplier= supplierService.updateSupplier(supplierId, supplier); 
-		return new ResponseEntity<>(updatedsupplier, HttpStatus.OK); // 200 Ok
+		return new ResponseEntity<>(updatedsupplier, HttpStatus.OK); 
 	}
 	
 	
