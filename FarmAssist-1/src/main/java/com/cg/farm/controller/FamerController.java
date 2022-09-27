@@ -38,7 +38,7 @@ public class FamerController {
 	}
 	
 	@DeleteMapping("/farmer/delete/{farmerId}")
-	ResponseEntity<Farmer> deleteAdvertisement(@PathVariable("farmerId") int id) throws FarmerNotFoundException{
+	ResponseEntity<Farmer> deleteFarmer(@PathVariable("farmerId") int id) throws FarmerNotFoundException{
 		Farmer frm = farmerService.deleteFarmer(id);
 		return new ResponseEntity<>(frm, HttpStatus.OK);
 	}
